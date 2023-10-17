@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card | Details</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/output.css" />
+  </head>
+  <body class="font-Space_Grotesk h-[100vh] overflow-hidden">
+    <div class="Large:flex Large:items-center Large:justify-center">
+      <div
+        class="relative w-full bg-center bg-no-repeat bg-cover bg-mobile continer h-1/3 Large:bg-desktop Large:h-[100vh] Large:w-[50%] medium:h-[305px]"
+      >
+        <div class="pl-16 cards p-7">
+          <div
+            class="relative scale-75 translate-x-5 bg-center bg-no-repeat bg-cover bg-cardBack w-[447px] max-[485px]:translate-x-[-6rem] max-[485px]:scale-50 h-[245px] small:w-[447px] small:h-[245px] small:scale-90 small:translate-x-[6rem] medium:translate-x-0 medium:absolute medium:right-0 Large:translate-y-[13rem] Large:translate-x-1 Large:scale-[0.7]"
+          >
+            <span
+              id="cvv"
+              class="absolute right-12 bottom-[111px] text-white font-[18px] select-none small:right-[5rem]"
+              >000</span
+            >
+          </div>
+          <div
+            class="absolute scale-75 -bottom-[4.6rem] -left-[10px] w-[447px] h-[245px] bg-center bg-no-repeat bg-cover bg-cardFront max-[485px]:translate-x-[-3rem] max-[485px]:translate-y-[-1.5rem] max-[485px]:scale-50 text-white font-[18px] select-none small:w-[447px] small:h-[245px] small:translate-x-[2rem] medium:left-[20%] small:translate-y-7 small:scale-90 Large:scale-[0.7] Large:left-0 Large:translate-x-2 Large:-translate-y-[27rem]"
+          >
+            <img
+              src="./assets/images/card-logo.svg"
+              alt="logo"
+              class="mt-5 ml-5"
+            />
+            <p class="mt-[70px] mb-5 ml-5 text-[25px]" id="numbers">
+              <span class="mr-2 tracking-widest">0000</span>
+              <span class="mr-2 tracking-widest">0000</span>
+              <span class="mr-2 tracking-widest">0000</span>
+              <span class="tracking-widest">0000</span>
+            </p>
+            <p class="relative ml-5">
+              <span class="text-[18px]" id="name">xxxxxxxxxxxxxx</span
+              ><span class="absolute right-5 top-1" id="date"
+                ><span>00</span>/<span>00</span></span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <form class="px-5 pt-20 form pr-7 text-Very_Dark_violet-0 small:pt-28">
+        <label for="Name" class="uppercase">Cardholder Name</label>
+        <input
+          required
+          type="text"
+          id="Name"
+          placeholder="e.g. Jane Appleseed"
+          class="w-full px-2 py-4 mt-3 transition-all duration-500 rounded-md outline-none ring-2 ring-Light_violet-0 mb-7 focus:ring-Very_Dark_violet-0"
+        />
+        <div class="text-sm -translate-y-6 text-Red-0">
+          <span id="span1"></span>
+        </div>
+        <label for="cardNumber" class="uppercase">Card Number</label>
+        <input
+          required
+          type="text"
+          id="cardNumber"
+          maxlength="19"
+          placeholder="e.g. 1234 5678 9123 0000"
+          class="w-full px-2 py-4 mt-3 transition-all duration-500 rounded-md outline-none ring-2 ring-Light_violet-0 mb-7 focus:ring-Very_Dark_violet-0"
+        />
+        <div class="text-sm -translate-y-6 text-Red-0">
+          <span id="span2"></span>
+        </div>
+        <div class="flex items-center max-[485px]:flex-col">
+          <div>
+            <label for="Date" class="tracking-wider text-[18px] uppercase"
+              >Exp. Date (MM/YY)</label
+            >
+            <div class="relative flex">
+              <input
+                required
+                id="MM"
+                maxlength="2"
+                type="text"
+                placeholder="MM"
+                class="w-full px-4 py-4 mt-3 transition-all duration-500 rounded-md outline-none ring-2 ring-Light_violet-0 mb-7 focus:ring-Very_Dark_violet-0"
+              />
+              <div class="absolute bottom-0 text-sm text-Red-0">
+                <span id="span3"></span>
+              </div>
+              <input
+                required
+                type="text"
+                maxlength="2"
+                id="YY"
+                placeholder="YY"
+                class="w-full px-4 py-4 mt-3 ml-3 transition-all duration-500 rounded-md outline-none ring-2 ring-Light_violet-0 mb-7 focus:ring-Very_Dark_violet-0"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="CVC" class="ml-4 uppercase">CVC</label>
+            <div>
+              <input
+                required
+                type="text"
+                maxlength="3"
+                id="cvvi"
+                placeholder="e.g. 123"
+                class="px-4 py-4 mt-3 ml-3 transition-all duration-500 rounded-md outline-none ring-2 ring-Light_violet-0 mb-7 focus:ring-Very_Dark_violet-0"
+              />
+              <div class="relative ml-3 text-sm text-Red-0">
+                <span id="span4" class="absolute bottom-0"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="relative w-full px-10 py-5 m-auto mt-3 text-white transition-opacity duration-500 rounded-lg outline-none opacity-80 bg-Very_Dark_violet-0 hover:opacity-100 small:w-[70%] small:absolute small:text-[1.3em] small:left-1/2 small:translate-y-3 small:-translate-x-1/2 Large:relative"
+        >
+          Confirm
+        </button>
+      </form>
+    </div>
+    <div
+      id="complate"
+      class="-translate-y-[28rem] opacity-0 -translate-x-[100em] flex z-10 w-full bg-white pt-14 max-[485px]:h-[100%] max-[485px]:-translate-y-[40rem] h-[70%] small:-translate-y-[23rem] items-center flex-col justify-center transition-transform delay-100 duration-700 overflow-hidden Large:h-[100vh] Large:-translate-y-full Large:pt-[20rem]"
+    >
+      <img
+        src="./assets/images/icon-complete.svg"
+        alt="complete"
+        class="mb-9"
+      />
+      <h1
+        class="text-[2em] tracking-widest mb-3 uppercase text-Very_Dark_violet-0"
+      >
+        Thank You!
+      </h1>
+      <p class="mb-7 text-[18px] tracking-wide text-Dark_violet-0">
+        We've added your card details
+      </p>
+      <button
+        type="submit"
+        id="continue"
+        class="Large:w-[50%] relative w-[75%] px-10 py-3 m-auto mt-3 text-white transition-opacity duration-500 rounded-lg outline-none opacity-80 bg-Very_Dark_violet-0 hover:opacity-100"
+      >
+        Continue
+      </button>
+    </div>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
